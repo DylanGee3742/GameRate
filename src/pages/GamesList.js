@@ -12,6 +12,7 @@ export function Games() {
 
   return (
     <>
+    {/* Once I have the data map out the values for dropdowns to filter by filters.map etc */}
       <div className='container'>
         <div className="row align-items-end">
           <div className="col-1">
@@ -21,70 +22,70 @@ export function Games() {
             <nav className="navbar navbar-expand navbar-light bg-light">
               <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
-                  <li className="nav-item px-2">
-                    <div class="dropdown">
+                <li className="nav-item px-2">
+                    <div className="dropdown">
                       <div className="col nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Year
                       </div>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Games</a></li>
-                        <li><a class="dropdown-item" href="#">Reviews</a></li>
-                        <li><a class="dropdown-item" href="#">Gamelist</a></li>
-                        <li><a class="dropdown-item" href="#">Likes</a></li>
+                      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButtonOther">
+                        <li><button className="dropdown-item" onClick={() => setFilter("2020's")}>2020's</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("2010's")}>2010's</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("2000's")}>2000's</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("1990's")}>1990's</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("1980's")}>1980's</button></li>
                       </ul>
                     </div>
                   </li>
-                  <li className="nav-item  px-2">
-                    <div class="dropdown">
+                  <li className="nav-item px-2">
+                    <div className="dropdown">
                       <div className="col nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Rating
                       </div>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Games</a></li>
-                        <li><a class="dropdown-item" href="#">Reviews</a></li>
-                        <li><a class="dropdown-item" href="#">Gamelist</a></li>
-                        <li><a class="dropdown-item" href="#">Likes</a></li>
+                      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButtonOther">
+                        <li><button className="dropdown-item" onClick={() => setFilter("5 Star")}>5 Star</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("4 Star")}>4 Star</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("3 Star")}>3 Star</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("2 Star")}>2 Star</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("1 Star")}>1 Star</button></li>
                       </ul>
                     </div>
                   </li>
-                  <li className="nav-item  px-2">
-                    <div class="dropdown">
+                  <li className="nav-item px-2">
+                    <div className="dropdown">
                       <div className="col nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Genre
                       </div>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Games</a></li>
-                        <li><a class="dropdown-item" href="#">Reviews</a></li>
-                        <li><a class="dropdown-item" href="#">Gamelist</a></li>
-                        <li><a class="dropdown-item" href="#">Likes</a></li>
+                      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButtonOther">
+                        <li><button className="dropdown-item" onClick={() => setFilter("Shooters")}>Shooters</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("RPG")}>RPG</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("Strategy")}>Strategy</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("Co-op")}>Co-op</button></li>
                       </ul>
                     </div>
                   </li>
                   <li className="nav-item px-2">
-                    <div class="dropdown">
+                    <div className="dropdown">
                       <div className="col nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Popular
                       </div>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Games</a></li>
-                        <li><a class="dropdown-item" href="#">Reviews</a></li>
-                        <li><a class="dropdown-item" href="#">Gamelist</a></li>
-                        <li><a class="dropdown-item" href="#">Likes</a></li>
+                      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButtonOther">
+                        <li><button className="dropdown-item" onClick={() => setFilter("This Week")}>This Week</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("This Month")}>This Month</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("This Year")}>This Year</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("All Time")}>All Time</button></li>
                       </ul>
                     </div>
                   </li>
                   <li className="nav-item px-2">
-                    <div class="dropdown">
+                    <div className="dropdown">
                       <div className="col nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Platform
                       </div>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <select class="dropdown-menu" aria-labelledby="dropdownMenuButton1" value={filter} onChange={handleSelectChange}>
-                          <option value="" class="dropdown-item">New Releases</option>
-                          <option value="option1">Option 1</option>
-                          <option value="option2">Option 2</option>
-                          <option value="option3">Option 3</option>
-                        </select>
+                      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButtonOther">
+                        <li><button className="dropdown-item" onClick={() => setFilter("PS5")}>PS5</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("XBOX")}>XBOX</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("PC")}>PC</button></li>
+                        <li><button className="dropdown-item" onClick={() => setFilter("Nintendo")}>Nintendo</button></li>
                       </ul>
                     </div>
                   </li>
