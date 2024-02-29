@@ -18,10 +18,13 @@ export default function GamesFiltered(props) {
     return (
         <>
             <h1>{title}</h1>
-            <div className="col">
+            <div clsssName="row d-flex overflow-auto">
+                {/* flex-wrap makes it start a new line, d-flex makes it inline */}
+            <div className='col d-flex flex-wrap'>
             {gameObj.map((game, gameIndex) => (
-                          <div key={gameIndex} className="col-md-3 mt-1">{game.game}{gameIndex}</div>
+                          <div key={gameIndex} className="col-2 p-0 m-0">{game.game}</div>
                         ))}
+            </div>
             </div>
         </>
     )
