@@ -28,7 +28,7 @@ export function GameListContainer(props) {
                     <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                       <div className="row">
                         {gameSet.map((game, gameIndex) => (
-                          <div key={gameIndex} className="col-md-3 mt-1">{game.game}{game.id}</div>
+                          <div key={gameIndex} className="col-md-3 mt-1">{game.game}{game.title}{game.id}</div>
                         ))}
                       </div>
                     </div>
