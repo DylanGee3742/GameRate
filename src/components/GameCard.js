@@ -7,9 +7,7 @@ export function GameCard(props) {
         <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Call_of_Duty_%282003%29_cover.jpg" 
         className="img-fluid p-0 m-0 rounded"
         alt="Game Cover" />
-        <p>Title</p>
         {/* {props.filter} */}
-
     </div>
     
   )
