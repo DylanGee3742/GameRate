@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Landing } from './pages/Landing';
 import { Games } from './pages/GamesList';
-import { Profile } from './pages/Profile';
+import { Profile } from './pages/profile/Profile';
 import { SignUp } from './pages/SignUp';
 import { Login } from './pages/Login';
 import { GamePage } from './pages/GamePage';
-import { Settings } from './pages/Settings';
+import { Settings } from './pages/profile/Settings';
 import { NotFound } from './pages/NotFound';
 import { Header } from './components/Header';
+import ProfileGames from './pages/profile/ProfileGames';
+import { ProfileGameReviews } from './pages/profile/ProfileGameReviews';
+import ProfileLikes from './pages/profile/ProfileLikes';
+import { ProfileGamelist } from './pages/profile/ProfileGamelist';
+import Friends from './pages/profile/Friends';
 
 
 function App() {
@@ -55,6 +60,12 @@ function App() {
     {/* This will need an :id adding on - login, keep in session and use in URL as profile  */}
       <Route path="/profile" element={<Profile />} />
       <Route path="/settings" element={<Settings />} />
+      <Route path="/profilegames" element={<ProfileGames />} />
+      <Route path="/profilereviews" element={<ProfileGameReviews />} />
+      <Route path="/profilelikes" element={<ProfileLikes />} />
+      <Route path="/profilegamelist" element={<ProfileGamelist />} />
+      <Route path="/friends" element={<Friends />} />
+
 
     {/* Think will turn this into one signup/login nav - will then route inside to each page */}
       <Route path="/signup" element={<SignUp />} />
