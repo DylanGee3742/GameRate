@@ -1,7 +1,12 @@
 import React from 'react'
+import { GameReview } from './../../components/GameReview';
 
 export function ProfileGameReviews() {
   return (
-    <div>ProfileGameReviews</div>
+    <>
+    <div className='container'>
+    <GameReview />
+    </div>
+    </>
   )
 }
