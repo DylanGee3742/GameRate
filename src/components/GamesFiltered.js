@@ -5,15 +5,8 @@ import { Games } from './../pages/GamesList';
 
 export default function GamesFiltered(props) {
     const gameObj = listFill(props.filter)
-    const title = props.filterTitle
-    const games = []
+    const title = gameObj[0].title
     console.log(gameObj)
-
-    for (let i = 0; i < gameObj.length; i++) {
-        games.push(gameObj[i].game)
-    }
-
-    console.log(games)
 
     return (
         <>
