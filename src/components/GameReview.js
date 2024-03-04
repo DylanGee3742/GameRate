@@ -17,7 +17,7 @@ export function GameReview(props) {
 
     return (
         <>
-            <h1 className='my-3'>Recent Reviews</h1>
+            <h1 className='my-3'>Reviews</h1>
             <hr />
             <div clsssName="row d-flex">
                 {/* flex-wrap makes it start a new line, d-flex makes it inline */}
