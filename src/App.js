@@ -14,6 +14,7 @@ import { ProfileGameReviews } from './pages/profile/ProfileGameReviews';
 import ProfileLikes from './pages/profile/ProfileLikes';
 import { ProfileGamelist } from './pages/profile/ProfileGamelist';
 import Friends from './pages/profile/Friends';
+import { Footer } from './components/Footer';
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
       <Route path="*" element={<NotFound />} />
 
     </Routes>
+    <Footer />
     </div>
     </>
   );
