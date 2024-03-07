@@ -19,12 +19,9 @@ export function Games() {
   return (
     <>
       {/* Once I have the data map out the values for dropdowns to filter by filters.map etc */}
-      <div className='container'>
+
         <div className="row align-items-end">
-          <div className="col-1">
-            <p>BROWSE</p>
-          </div>
-          <div className="col d-flex" >
+          <div className="col d-flex justify-content-center" >
 
             <nav className="navbar navbar-expand navbar-light bg-light">
               <div className="collapse navbar-collapse" id="navbarNavDropdown">
@@ -36,8 +33,10 @@ export function Games() {
                 </ul>
               </div>
             </nav>
-
-            <p className="m-3">FIND A GAME</p>
+            </div>
+            
+            <div>
+            <p className="m-3 text-center">FIND A GAME</p>
             <form className="mt-2 form-inline col">
               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
             </form>
@@ -49,7 +48,6 @@ export function Games() {
           <GamesFiltered filter={filter} filterTitle={filter} />
         </div>
 
-      </div>
     </>
   )
 }
