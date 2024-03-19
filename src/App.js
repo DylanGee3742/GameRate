@@ -15,6 +15,9 @@ import ProfileLikes from './pages/profile/ProfileLikes';
 import { ProfileGamelist } from './pages/profile/ProfileGamelist';
 import Friends from './pages/profile/Friends';
 import { Footer } from './components/Footer';
+import { AboutUs } from './pages/footer/AboutUs';
+import { Terms } from './pages/footer/Terms';
+import { Contact } from './pages/footer/Contact';
 
 
 function App() {
@@ -73,6 +76,10 @@ function App() {
       <Route path="/login" element={<Login />} />
 
       <Route path="*" element={<NotFound />} />
+
+      <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/contact" element={<Contact />} />
 
     </Routes>
     <Footer />
