@@ -33,14 +33,12 @@ export function Games() {
                 </ul>
               </div>
             </nav>
-            </div>
-            
-            <div>
             <p className="m-3 text-center">FIND A GAME</p>
-            <form className="mt-2 form-inline col">
+            <form className="mt-2 form-inline">
               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
             </form>
-          </div>
+            </div>
+            
         </div>
         <hr />
 
