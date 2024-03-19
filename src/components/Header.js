@@ -18,13 +18,7 @@ export function Header({ loggedIn, signOut, handleLogin, handleSignup, username 
                     <nav className="navbar navbar-expand navbar-light bg-light">
                         <div className="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul className="navbar-nav">
-                                <li className="nav-item active">
-                                    <NavLink className="nav-link" to="/">Home</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="col nav-link" to="/games">Games</NavLink>
-                                </li>
-                                {loggedIn ? <li className="nav-item">
+                            {loggedIn ? <li className="nav-item">
                                     <div class="dropdown">
                                         <div className="col nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             {storedUsername}
@@ -45,10 +39,13 @@ export function Header({ loggedIn, signOut, handleLogin, handleSignup, username 
                                     <li className="nav-item">
                                         <SignUp handleSignup={handleSignup} />
                                     </li> </>}
+                                <li className="nav-item active">
+                                    <NavLink className="nav-link" to="/">Home</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="col nav-link" to="/games">Games</NavLink>
+                                </li>
                             </ul>
-                            <form className="form-inline col">
-                                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                            </form>
                         </div>
                     </nav>
                 </div>
