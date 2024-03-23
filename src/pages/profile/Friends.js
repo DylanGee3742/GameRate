@@ -1,7 +1,48 @@
 import React from 'react'
 
 export default function Friends() {
+
+  const friendProfilePic = {
+    maxHeight: '1550px',
+    width: '550px'
+  }
+
   return (
-    <div>Friends</div>
+    <>
+    <div className='row border-bottom m-3'>
+      <h2 className='ms-3 mb-4'>Friends</h2>
+      </div>
+
+      <ul className='list-group list-group list-unstyled mt-3 ms-3 me-3'>
+        {[...Array(5)].map((_, index) => (
+          <li key={index}>
+            <div className="row d-flex ms-5 mb-3">
+              <div className='col-1 d-flex align-items-center justify-content-end'>
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                  className="img-fluid p-0 rounded-circle friendsPic"
+                  style={friendProfilePic}
+                  alt="Game Cover" />
+              </div>
+              <div className='col'>
+                <div className='row d-flex '>
+                  <div className='col-1 d-flex'>
+                  <p className='m-3 align-self-end'>Name</p>
+                  </div>
+                </div>
+                <div className='row flex-row'>
+                  <div className='col-2'>
+                  <p className='m-3'>Followers: 69</p>
+                  </div>
+                  <div className='col'>
+                  <p className='m-3 justify-content-start'>Followers: 75</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }
