@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Landing } from './pages/Landing';
 import { Games } from './pages/GamesList';
@@ -18,14 +18,16 @@ import { Footer } from './components/Footer';
 import { AboutUs } from './pages/footer/AboutUs';
 import { Terms } from './pages/footer/Terms';
 import { Contact } from './pages/footer/Contact';
+import ScrollToTop from './components/ScrollToTop';
+
 
 
 function App() {
+
   const [loggedIn, SetLoggedIn] = useState(false);
   const navigate = useNavigate();
-  const [users, setUsers] =useState([]);
+  const [users, setUsers] = useState([]);
   // const [username, setUsername] = useState("");
-  
 
 
   const handleLogin = (username, password) => {
@@ -42,48 +44,51 @@ function App() {
   }
 
   const handleSignup = (username, password) => {
-    setUsers([...users, {username: username, password: password}])
+    setUsers([...users, { username: username, password: password }])
   }
 
   const signOut = () => {
     SetLoggedIn(false);
     navigate('/')
- 
+
   }
+
 
   return (
     <>
-    <div  className="container-fluid d-flex flex-column vh-100 overflow-auto">
-    <Header loggedIn={loggedIn} signOut={signOut} handleLogin={handleLogin} handleSignup={handleSignup} />
+      
+      <div className="container-fluid d-flex flex-column vh-100">
+        <Header loggedIn={loggedIn} signOut={signOut} handleLogin={handleLogin} handleSignup={handleSignup} />
+        <ScrollToTop />
 
-    <Routes>
-      <Route path="/" element={<Landing loggedIn={loggedIn} />} />
-      <Route path="/games" element={<Games />} />
-      <Route path="/games/:id" element={<GamePage />} />
+        <Routes>
+          <Route path="/" element={<Landing loggedIn={loggedIn} />} />
+          <Route path="/games" element={<Games />} />
+          <Route path="/games/:id" element={<GamePage />} />
 
-    {/* This will need an :id adding on - login, keep in session and use in URL as profile  */}
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/settings" element={<Settings />} />
-      <Route path="/profilegames" element={<ProfileGames />} />
-      <Route path="/profilereviews" element={<ProfileGameReviews />} />
-      <Route path="/profilelikes" element={<ProfileLikes />} />
-      <Route path="/profilegamelist" element={<ProfileGamelist />} />
-      <Route path="/friends" element={<Friends />} />
+          {/* This will need an :id adding on - login, keep in session and use in URL as profile  */}
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/profilegames" element={<ProfileGames />} />
+          <Route path="/profilereviews" element={<ProfileGameReviews />} />
+          <Route path="/profilelikes" element={<ProfileLikes />} />
+          <Route path="/profilegamelist" element={<ProfileGamelist />} />
+          <Route path="/friends" element={<Friends />} />
 
 
-    {/* Think will turn this into one signup/login nav - will then route inside to each page */}
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/login" element={<Login />} />
+          {/* Think will turn this into one signup/login nav - will then route inside to each page */}
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
 
-      <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
 
-      <Route path="/aboutus" element={<AboutUs />} />
-      <Route path="/terms" element={<Terms />} />
-      <Route path="/contact" element={<Contact />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/contact" element={<Contact />} />
 
-    </Routes>
-    <Footer />
-    </div>
+        </Routes>
+        <Footer />
+      </div>
     </>
   );
 }
