@@ -1,32 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import "./RateGameModuleStyle.css";
 
 export default function RateGame() {
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
-    const [totalStars, setTotalStars] = useState(5);
+    const totalStars = 5;
+
+    const handleRatingChange = (currentRating) => {
+        setRating(currentRating);
+        console.log(currentRating); // You can remove this line if not needed
+    };
 
     return (
         <div className='RateGameModule'>
             <h1>Your Rating</h1>
-            {[...Array(totalStars)].map((star, index) => {
+            {[...Array(totalStars)].map((_, index) => {
                 const currentRating = index + 1;
 
                 return (
                     <label key={index}>
                         <input
-                            key={star}
                             type="radio"
                             name="rating"
                             value={currentRating}
-                            onChange={() => setRating(currentRating)}
-                            onClick={() => console.log(currentRating)}
+                            onChange={() => handleRatingChange(currentRating)}
                         />
                         <span
                             className="star"
                             style={{
-                                color:
-                                    currentRating <= (hover || rating) ? "#ffc107" : "#e4e5e9",
+                                color: currentRating <= (hover || rating) ? "#ffc107" : "#e4e5e9",
                             }}
                             onMouseEnter={() => setHover(currentRating)}
                             onMouseLeave={() => setHover(null)}
