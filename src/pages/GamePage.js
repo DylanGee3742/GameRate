@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar, faHeart as solidHeart, faGamepad as gamePad } from '@fortawesome/free-solid-svg-icons';
 import { faPlus as plus, faStar as regularStar, faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
@@ -12,12 +12,7 @@ export function GamePage() {
   const [onGameList, setOnGameList] = useState(false);
 
   const { id } = useParams();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [])
-
-
+  
   return (
     <>
       {/* Title, rating, add to list, rate */}
