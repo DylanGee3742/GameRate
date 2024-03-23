@@ -5,10 +5,6 @@ import RateGame from './RateGame';
 import '../styles/RateGameModalStyle.css';
 
 export default function RateGameModal() {
-  useEffect(()=>{
-    console.log('hello')
-    window.scrollTo(0, 0);
-  }, [])
 
   return (
     <>
