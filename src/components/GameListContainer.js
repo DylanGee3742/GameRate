@@ -10,8 +10,6 @@ export function GameListContainer(props) {
     gameSets.push(games.slice(i, i + gamesPerSlide));
   }
 
-  console.log(gameSets)
-
   return (
     <div className='container'>
       <div className="row m-3">
