@@ -20,6 +20,7 @@ import { Terms } from './pages/footer/Terms';
 import { Contact } from './pages/footer/Contact';
 import ScrollToTop from './components/ScrollToTop';
 import { FriendsPage } from './pages/friends/FriendsPage';
+import Reviews from './pages/Reviews';
 
 
 
@@ -70,12 +71,14 @@ function App() {
           {/* This will need an :id adding on - login, keep in session and use in URL as profile  */}
           <Route path="/profile" element={<Profile />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/profilegames" element={<ProfileGames />} />
-          <Route path="/profilereviews" element={<ProfileGameReviews />} />
-          <Route path="/profilelikes" element={<ProfileLikes />} />
-          <Route path="/profilegamelist" element={<ProfileGamelist />} />
-          <Route path="/friends" element={<Friends />} />
+          <Route path="/profile/games" element={<ProfileGames />} />
+          <Route path="/profile/reviews" element={<ProfileGameReviews />} />
+          <Route path="/profile/likes" element={<ProfileLikes />} />
+          <Route path="/profile/gamelist" element={<ProfileGamelist />} />
+          <Route path="profile/friends" element={<Friends />} />
           <Route path="/friends/:id" element={<FriendsPage />} />
+
+          <Route path="/reviews/:id" element={<Reviews />} />
 
 
           {/* Think will turn this into one signup/login nav - will then route inside to each page */}
