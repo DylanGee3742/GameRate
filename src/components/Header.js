@@ -25,11 +25,11 @@ export function Header({ loggedIn, signOut, handleLogin, handleSignup, username 
                                         </div>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                             <li><NavLink className="dropdown-item" to="/profile">Profile</NavLink></li>
-                                            <li><NavLink className="dropdown-item" to="/profilegames">Games</NavLink></li>
-                                            <li><NavLink className="dropdown-item" to="/profilereviews">Reviews</NavLink></li>
-                                            <li><NavLink className="dropdown-item" to="/profilegamelist">Gamelist</NavLink></li>
-                                            <li><NavLink className="dropdown-item" to="/profilelikes">Likes</NavLink></li>
-                                            <li><NavLink className="dropdown-item" to="/friends">Friends</NavLink></li>
+                                            <li><NavLink className="dropdown-item" to="/profile/games">Games</NavLink></li>
+                                            <li><NavLink className="dropdown-item" to="/profile/reviews">Reviews</NavLink></li>
+                                            <li><NavLink className="dropdown-item" to="/profile/gamelist">Gamelist</NavLink></li>
+                                            <li><NavLink className="dropdown-item" to="/profile/likes">Likes</NavLink></li>
+                                            <li><NavLink className="dropdown-item" to="/profile/friends">Friends</NavLink></li>
                                             <li><a class="dropdown-item" onClick={signOut}>Sign Out</a></li>
                                         </ul>
                                     </div>
