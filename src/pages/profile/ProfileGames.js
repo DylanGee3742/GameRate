@@ -5,7 +5,7 @@ export default function ProfileGames() {
   return (
     <>
     <div className='container'>
-        <GamesFiltered filter={"Played"} filterTitle={"Games"} />
+        <GamesFiltered filter={"Played"} filterTitle={"Games"} showRating={true} />
     </div>
     </>
   )
