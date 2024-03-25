@@ -11,9 +11,10 @@ export default function RateGame() {
         console.log(currentRating); // You can remove this line if not needed
     };
 
+
     return (
         <div className='RateGameModule'>
-            <h1>Your Rating</h1>
+            <h4>Your Rating</h4>
             {[...Array(totalStars)].map((_, index) => {
                 const currentRating = index + 1;
 
