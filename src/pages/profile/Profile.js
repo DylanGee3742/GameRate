@@ -21,7 +21,7 @@ export function Profile() {
             <h1>{storedUsername}</h1>
           </div>
           <div className="col d-flex">
-          <NavLink className="btn btn-secondary mb-2" to="/settings">Edit Profile</NavLink>
+          <NavLink className="btn btn-secondary mb-2" to="/profile/settings">Edit Profile</NavLink>
           </div>
           <div className="col-1 d-flex flex-column">
             <p className='p-0 m-0'><strong>124</strong></p>
