@@ -40,7 +40,7 @@ export function Profile() {
 
         {/* Recent Likes */}
         <div className='row'>
-          <GamesFiltered filter={"Recent Likes"} filterTitle={"Recent Likes"}/>
+          <GamesFiltered filter={"Recent Likes"} filterTitle={"Recent Likes"} showRating={true} liked={true} />
         </div>
         <hr />
 
