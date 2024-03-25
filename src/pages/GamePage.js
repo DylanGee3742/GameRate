@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar, faHeart as solidHeart, faGamepad as gamePad } from '@fortawesome/free-solid-svg-icons';
 import { faPlus as plus, faStar as regularStar, faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
@@ -27,7 +27,7 @@ export function GamePage() {
           <span className="d-inline-flex"><p className="p-0 m-0 ms-4"><strong>4.2/5</strong></p><FontAwesomeIcon icon={solidStar} className="goldStar m-1" /></span>
         </div>
         <div className='col text-center'>
-          <p className="p-0 m-0"><strong>Rate</strong></p>
+          <p className="p-0 m-0"><strong>Rate & Review</strong></p>
           <RateGameModal />
         </div>
         <div className='col text-center'>
@@ -82,14 +82,14 @@ export function GamePage() {
         <h6>Friends Activty</h6>
         {/* This will map out when have real data */}
         <ul className='list-group list-group-horizontal list-unstyled mt-3 '>
-          {[...Array(3)].map((_, index) => (
+          {[...Array(5)].map((_, index) => (
             <li key={index}>
               <div className="col me-4 text-center">
                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
                   className="img-fluid p-0 rounded-circle friendsPic"
                   alt="Game Cover" />
                 <p>Name</p>
-                {[...Array(index + 2)].map((_, i) => (
+                {[...Array(index + 1)].map((_, i) => (
                   <FontAwesomeIcon key={i} icon={solidStar} className="goldStar" />
                 ))}
               </div>
@@ -99,6 +99,12 @@ export function GamePage() {
       </div>
 
       {/* Artwork, cast etc whatever can get */}
+      <hr />
+      <div className='row'>
+        <NavLink to={`/reviews/${id}`} >
+          <button type="btn">Reviews</button>
+        </NavLink>
+      </div>
 
     </>
   );
