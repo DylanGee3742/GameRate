@@ -2,6 +2,7 @@ import React from 'react'
 import { trendingGames, newReleases } from '../data/GameData';
 import { listFill } from './../functions/listFill';
 import { Games } from './../pages/GamesList';
+import { NavLink } from 'react-router-dom';
 
 export function GameReview(props) {
     const gameObj = listFill(props.filter)
@@ -25,9 +26,9 @@ export function GameReview(props) {
                     {gameObj.map((game, gameIndex) => (
                         <>
                         <div key={gameIndex} className="col p-0 m-0 d-flex" >
-                            <div className='col-2'>
+                            <NavLink to={`/games/${game.id}`} className='col-2'>
                             {game.game}
-                            </div>
+                            </NavLink>
                             <div className="col d-flex flex-column">
                                 <p className='p-0 m-3'><strong>{game.title}</strong></p>
                                 <p className='p-0 m-3'>STARS</p>
