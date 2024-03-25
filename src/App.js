@@ -19,6 +19,7 @@ import { AboutUs } from './pages/footer/AboutUs';
 import { Terms } from './pages/footer/Terms';
 import { Contact } from './pages/footer/Contact';
 import ScrollToTop from './components/ScrollToTop';
+import { FriendsPage } from './pages/friends/FriendsPage';
 
 
 
@@ -74,6 +75,7 @@ function App() {
           <Route path="/profilelikes" element={<ProfileLikes />} />
           <Route path="/profilegamelist" element={<ProfileGamelist />} />
           <Route path="/friends" element={<Friends />} />
+          <Route path="/friends/:id" element={<FriendsPage />} />
 
 
           {/* Think will turn this into one signup/login nav - will then route inside to each page */}
