@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import GamesFiltered from '../components/GamesFiltered'
 import { FilterDropdown } from '../components/FilterDropdown';
-import { SearchBar } from './../components/SearchBar';
+import { Search } from '../components/Search';
+import SearchResultsList from '../components/SearchResultsList';
+import { faPlus as plus } from '@fortawesome/free-regular-svg-icons';
 
 
 export function Games() {
   const [filter, setFilter] = useState("");
+  const [results, setResults] = useState([])
 
   // Hard coded for now 
   const filterOptions = {
@@ -21,28 +24,31 @@ export function Games() {
     <>
       {/* Once I have the data map out the values for dropdowns to filter by filters.map etc */}
 
-        <div className="row align-items-end">
-          <div className="col d-flex justify-content-center" >
+      <div className="row align-items-end">
+        <div className="col d-flex justify-content-center" >
 
-            <nav className="navbar navbar-expand navbar-light bg-light">
-              <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul className="navbar-nav">
-                  {/* Maps out all the dropdown categories and their options */}
-                  {Object.keys(filterOptions).map((category, index) => (
-                    <FilterDropdown key={index} title={category} options={filterOptions[category]} setFilter={setFilter}  />
-                  ))}
-                </ul>
-              </div>
-            </nav>
-            <SearchBar buttonName={'Find A Game'}/>
+          <nav className="navbar navbar-expand navbar-light bg-light">
+            <div className="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul className="navbar-nav">
+                {/* Maps out all the dropdown categories and their options */}
+                {Object.keys(filterOptions).map((category, index) => (
+                  <FilterDropdown key={index} title={category} options={filterOptions[category]} setFilter={setFilter} />
+                ))}
+              </ul>
             </div>
-            
+          </nav>
+          <div className="search-bar-container">
+            <Search setResults={setResults} database={'games'} style={{zIndex: '1000'}} />
+            {results && results.length > 0 && <SearchResultsList results={results} style={{zIndex: '1000'}}/> }
+          </div>
         </div>
-        <hr />
 
-        <div className="row">
-          <GamesFiltered filter={filter} filterTitle={filter} />
-        </div>
+      </div>
+      <hr />
+
+      <div className="row">
+        <GamesFiltered filter={filter} filterTitle={filter} />
+      </div>
 
     </>
   )

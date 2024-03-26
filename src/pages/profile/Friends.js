@@ -1,7 +1,12 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, {useState} from 'react'
+import { NavLink } from 'react-router-dom';
+import { Search } from '../../components/Search';
+import SearchResultsList from '../../components/SearchResultsList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus as plus, faStar as regularStar, faHeart as regularHeart } from '@fortawesome/free-solid-svg-icons';;
 
 export default function Friends() {
+  const [results, setResults] = useState([])
 
   const friendProfilePic = {
     maxHeight: '1550px',
@@ -16,9 +21,10 @@ export default function Friends() {
         </div>
         <div className='col d-flex justify-content-end'>
           <p className="m-3 text-center">Find a Friend</p>
-          <form className="mt-2 form-inline">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-          </form>
+          <div className="search-bar-container">
+            <Search setResults={setResults} database={'friends'} />
+            {results && results.length > 0 && <div><SearchResultsList results={results} database={'friends'} /> </div>}
+          </div>
         </div>
       </div>
 
