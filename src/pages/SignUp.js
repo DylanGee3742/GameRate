@@ -46,10 +46,6 @@ export function SignUp({ handleSignup }) {
                />
               <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Sign Up</button>
             </form>
-
-            </div>
-            <div className="modal-footer">
-              <p>Footer</p>
             </div>
           </div>
         </div>
