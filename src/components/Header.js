@@ -11,7 +11,7 @@ export function Header({ loggedIn, signOut, handleLogin, handleSignup, username 
             <div className="row align-items-center p-2 mb-5 justify-content-center" style={{ borderBottom: "2px solid black" }}>
 
                 <div className="col-5">
-                    <h1>GameRate</h1>
+                    <NavLink to='/' className='text-decoration-none color-black'><h1>GameRate</h1></NavLink>
                 </div>
 
                 <div className="col d-flex justify-content-end align-items-center">
