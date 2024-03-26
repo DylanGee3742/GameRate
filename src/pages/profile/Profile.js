@@ -2,9 +2,10 @@ import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom';
 import GamesFiltered from '../../components/GamesFiltered';
 import { GameReview } from '../../components/GameReview';
+import EditDetail from '../../components/EditDetail';
 
 
-export function Profile() {
+export function Profile({ username, password, setUsername, setPassword }) {
   const storedUsername = sessionStorage.getItem('username');
   return (
     <>
@@ -21,7 +22,11 @@ export function Profile() {
             <h1>{storedUsername}</h1>
           </div>
           <div className="col d-flex">
-          <NavLink className="btn btn-secondary mb-2" to="/profile/settings">Edit Profile</NavLink>
+          <EditDetail 
+          username={username} 
+          password={password}
+          setUsername={setUsername}
+          setPassword={setPassword} />
           </div>
           <div className="col-1 d-flex flex-column">
             <p className='p-0 m-0'><strong>124</strong></p>

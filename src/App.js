@@ -6,7 +6,6 @@ import { Profile } from './pages/profile/Profile';
 import { SignUp } from './pages/SignUp';
 import { Login } from './pages/Login';
 import { GamePage } from './pages/GamePage';
-import { Settings } from './pages/profile/Settings';
 import { NotFound } from './pages/NotFound';
 import { Header } from './components/Header';
 import ProfileGames from './pages/profile/ProfileGames';
@@ -29,14 +28,17 @@ function App() {
   const [loggedIn, SetLoggedIn] = useState(false);
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
-  // const [username, setUsername] = useState("");
-
+  // This will be sent to backend instead of state
+  // Left in during development 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  
 
   const handleLogin = (username, password) => {
     for (let i = 0; i < users.length; i++) {
       if (users[i].username === username && users[i].password === password) {
         SetLoggedIn(true);
-        // setUsername(users[i].username)
+        setUsername(users[i].username)
         sessionStorage.setItem('username', username)
         navigate('/')
       } else {
@@ -69,15 +71,18 @@ function App() {
           <Route path="/games/:id" element={<GamePage />} />
 
           {/* This will need an :id adding on - login, keep in session and use in URL as profile  */}
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/profile" element={<Profile 
+          username={username} 
+          password={password} 
+          setUsername={setUsername}
+          setPassword={setPassword}
+          />} />
           <Route path="/profile/games" element={<ProfileGames />} />
           <Route path="/profile/reviews" element={<ProfileGameReviews />} />
           <Route path="/profile/likes" element={<ProfileLikes />} />
           <Route path="/profile/gamelist" element={<ProfileGamelist />} />
           <Route path="profile/friends" element={<Friends />} />
           <Route path="/friends/:id" element={<FriendsPage />} />
-
           <Route path="/reviews/:id" element={<Reviews />} />
 
 
