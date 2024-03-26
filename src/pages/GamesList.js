@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import GamesFiltered from '../components/GamesFiltered'
 import { FilterDropdown } from '../components/FilterDropdown';
+import { SearchBar } from './../components/SearchBar';
 
 
 export function Games() {
@@ -33,10 +34,7 @@ export function Games() {
                 </ul>
               </div>
             </nav>
-            <p className="m-3 text-center">FIND A GAME</p>
-            <form className="mt-2 form-inline">
-              <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            </form>
+            <SearchBar buttonName={'Find A Game'}/>
             </div>
             
         </div>
